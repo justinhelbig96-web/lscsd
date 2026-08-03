@@ -4,7 +4,6 @@ import {
   BadgeCheck,
   ChevronRight,
   Handshake,
-  Landmark,
   Menu,
   Scale,
   ShieldCheck,
@@ -43,12 +42,8 @@ const motivation = [
 
 function DepartmentSeal({ compact = false }: { compact?: boolean }) {
   return (
-    <div className={compact ? "department-seal compact" : "department-seal"} aria-label="Eigenständig gestaltetes LSCSD-Siegel">
-      <div className="seal-ring">
-        <span className="seal-top">Los Santos County</span>
-        <div className="seal-center"><Landmark size={compact ? 19 : 31} strokeWidth={1.35} /><strong>LSCSD</strong><small>Est. 2026</small></div>
-        <span className="seal-bottom">Sheriff’s Department</span>
-      </div>
+    <div className={compact ? "department-seal compact official-mark" : "department-seal official-mark"} aria-label="Los Santos County Sheriff’s Department Abzeichen">
+      <img src="/logos/lscsd-patch.png" alt="LSCSD Sheriff-Abzeichen" />
     </div>
   );
 }
@@ -91,8 +86,8 @@ function App() {
       <div className="scroll-progress" style={{ transform: `scaleX(${scrollProgress})` }} aria-hidden="true" />
       <header className="topbar">
         <a className="brand" href="#start" aria-label="Zur Startseite">
-          <span className="mini-badge"><ShieldCheck size={17} strokeWidth={1.7} /></span>
-          <span><strong>LSCSD</strong><small>Applicant Portal</small></span>
+          <img className="brand-wordmark" src="/logos/lscsd-wordmark.png" alt="LSCSD" />
+          <span><small>Applicant Portal</small></span>
         </a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Navigation öffnen" aria-expanded={menuOpen}>
           {menuOpen ? <X /> : <Menu />}
@@ -115,8 +110,8 @@ function App() {
               <span className="file-number">AKTENNUMMER <strong>RR-0804</strong></span>
             </div>
           </div>
-          <div className="hero-mark" data-reveal aria-label="Selbst gestaltetes Sheriff-Abzeichen">
-            <div className="badge-star"><div className="badge-core"><ShieldCheck size={48} strokeWidth={1.25} /><span>LS</span><small>COUNTY</small></div></div>
+          <div className="hero-mark" data-reveal aria-label="Los Santos County Sheriff-Abzeichen">
+            <div className="official-hero-badge"><img src="/logos/lscsd-patch.png" alt="Los Santos County Sheriff Abzeichen" /></div>
             <p>Integrity · Service · Respect</p>
           </div>
           <a className="scroll-cue" href="#person" aria-label="Zum nächsten Abschnitt"><ArrowDown size={18} /></a>
@@ -183,7 +178,7 @@ function App() {
         </section>
 
         <section className="section closing-section" id="schlusswort">
-          <div className="closing-badge" data-reveal><div className="badge-star small"><div className="badge-core"><ShieldCheck size={34} /><span>LS</span></div></div></div>
+          <div className="closing-badge" data-reveal><img src="/logos/lscsd-wordmark.png" alt="LSCSD Wortmarke" /></div>
           <div data-reveal>
             <p className="eyebrow centered">Schlusswort</p>
             <h2>Vielen Dank für die Zeit<br />und das <span>Interesse.</span></h2>
