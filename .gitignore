@@ -1,0 +1,23 @@
+node_modules
+dist
+.DS_Store
+*.local
+work-dev*.log
+.wrangler
+.next
+.vinext
+*.tsbuildinfo
+
+# Nicht mehr verwendetes lokales Startgerüst
+app
+build
+db
+drizzle
+examples
+tests
+worker
+.openai
+next.config.ts
+postcss.config.mjs
+drizzle.config.ts
+eslint.config.mjs
