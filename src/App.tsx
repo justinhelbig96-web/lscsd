@@ -4,7 +4,9 @@ import {
   BadgeCheck,
   ChevronRight,
   Handshake,
+  Landmark,
   Menu,
+  Scale,
   ShieldCheck,
   Target,
   X,
@@ -39,8 +41,22 @@ const motivation = [
   },
 ];
 
+function DepartmentSeal({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className={compact ? "department-seal compact" : "department-seal"} aria-label="Eigenständig gestaltetes LSCSD-Siegel">
+      <div className="seal-ring">
+        <span className="seal-top">Los Santos County</span>
+        <div className="seal-center"><Landmark size={compact ? 19 : 31} strokeWidth={1.35} /><strong>LSCSD</strong><small>Est. 2026</small></div>
+        <span className="seal-bottom">Sheriff’s Department</span>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState("start");
 
   useEffect(() => {
     const nodes = document.querySelectorAll<HTMLElement>("[data-reveal]");
@@ -52,10 +68,27 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const updateScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(max > 0 ? window.scrollY / max : 0);
+      const current = [...navItems].reverse().find(([, id]) => {
+        const section = document.getElementById(id);
+        return section && section.getBoundingClientRect().top <= window.innerHeight * 0.42;
+      });
+      if (current) setActiveSection(current[1]);
+      document.documentElement.style.setProperty("--scroll-y", `${window.scrollY}px`);
+    };
+    updateScroll();
+    window.addEventListener("scroll", updateScroll, { passive: true });
+    return () => window.removeEventListener("scroll", updateScroll);
+  }, []);
+
   const closeMenu = () => setMenuOpen(false);
 
   return (
     <div className="site-shell">
+      <div className="scroll-progress" style={{ transform: `scaleX(${scrollProgress})` }} aria-hidden="true" />
       <header className="topbar">
         <a className="brand" href="#start" aria-label="Zur Startseite">
           <span className="mini-badge"><ShieldCheck size={17} strokeWidth={1.7} /></span>
@@ -65,7 +98,7 @@ function App() {
           {menuOpen ? <X /> : <Menu />}
         </button>
         <nav className={menuOpen ? "nav is-open" : "nav"} aria-label="Hauptnavigation">
-          {navItems.map(([label, id]) => <a href={`#${id}`} onClick={closeMenu} key={id}>{label}</a>)}
+          {navItems.map(([label, id]) => <a className={activeSection === id ? "active" : ""} href={`#${id}`} onClick={closeMenu} key={id}>{label}</a>)}
         </nav>
         <div className="case-chip"><span /> Akte RR-0804</div>
       </header>
@@ -89,7 +122,16 @@ function App() {
           <a className="scroll-cue" href="#person" aria-label="Zum nächsten Abschnitt"><ArrowDown size={18} /></a>
         </section>
 
+        <div className="insignia-rail" aria-label="LSCSD Werte">
+          <DepartmentSeal compact />
+          <span><ShieldCheck size={16} /> Integrity</span><i />
+          <span><Scale size={16} /> Fairness</span><i />
+          <span><Handshake size={16} /> Service</span>
+          <DepartmentSeal compact />
+        </div>
+
         <section className="section person-section" id="person">
+          <div className="watermark-seal" aria-hidden="true"><DepartmentSeal /></div>
           <div className="section-label" data-reveal><span>01</span> Zur Person</div>
           <div className="person-grid">
             <article className="id-card" data-reveal>
@@ -114,6 +156,7 @@ function App() {
         </section>
 
         <section className="section motivation-section" id="motivation">
+          <div className="vertical-mark" aria-hidden="true">LS COUNTY · SHERIFF’S DEPARTMENT</div>
           <div className="section-heading" data-reveal>
             <div className="section-label"><span>02</span> Motivation</div>
             <h2>Was mich <span>antreibt.</span></h2>
@@ -130,6 +173,7 @@ function App() {
         </section>
 
         <section className="section vision-section" id="vision">
+          <div className="vision-medallion" data-reveal><DepartmentSeal /></div>
           <div className="section-label" data-reveal><span>03</span> Vision</div>
           <div className="quote-wrap" data-reveal>
             <span className="quote-mark">“</span>
