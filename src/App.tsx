@@ -87,7 +87,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState("start");
-  const [viewerStats, setViewerStats] = useState<{ online: number | null; total: number | null }>({ online: null, total: null });
+  const [viewerStats, setViewerStats] = useState({ online: 1, total: 1 });
 
   useEffect(() => {
     const nodes = document.querySelectorAll<HTMLElement>("[data-reveal]");
@@ -170,8 +170,8 @@ function App() {
         </nav>
         <div className="case-chip"><span /> Akte RR-0804</div>
         <div className="viewer-stats" aria-label="Besucherstatistik">
-          <span className="online-stat"><i /> Online <strong>{viewerStats.online ?? "–"}</strong></span>
-          <span>Total Viewer <strong>{viewerStats.total ?? "–"}</strong></span>
+          <span className="online-stat"><i /> Online <strong>{viewerStats.online}</strong></span>
+          <span>Total Viewer <strong>{viewerStats.total}</strong></span>
         </div>
       </header>
 
