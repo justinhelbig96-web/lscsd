@@ -208,6 +208,10 @@ function App() {
               <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 02</span><h3>Name folgt</h3><p>Profil und Aufgabenbereich werden nach finaler Abstimmung ergänzt.</p></div>
             </article>
           </div>
+          <aside className="leadership-note" data-reveal>
+            <BadgeCheck size={34} strokeWidth={1.35} />
+            <div><span>Offenheit & Lernbereitschaft</span><h3>Führung lernt man, indem man Verantwortung übernimmt.</h3><p>Ich möchte offen damit umgehen, dass ich bisher noch keine Erfahrung in einer Leader-Position sammeln konnte. Führung lässt sich nicht allein theoretisch lernen – man muss die Aufgabe selbst übernehmen, um Abläufe, Entscheidungen und deren Auswirkungen wirklich zu verstehen. Dabei können Fehler passieren, denn Fehler zu machen ist menschlich. Entscheidend ist für mich, offen damit umzugehen, daraus zu lernen und Rat von Menschen anzunehmen, die ihre Erfahrung weitergeben und mir neue Dinge zeigen. Meine erste Amtszeit sehe ich deshalb nicht als Anspruch, bereits alles zu können, sondern als Chance, zuzuhören, mich weiterzuentwickeln und jeden Tag verantwortungsvoll dazuzulernen.</p></div>
+          </aside>
         </section>
 
         <section className="section motivation-section" id="motivation">
