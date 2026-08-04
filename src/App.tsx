@@ -87,6 +87,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState("start");
+  const [viewerStats, setViewerStats] = useState<{ online: number | null; total: number | null }>({ online: null, total: null });
 
   useEffect(() => {
     const nodes = document.querySelectorAll<HTMLElement>("[data-reveal]");
@@ -96,6 +97,43 @@ function App() {
     );
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const getId = (storage: Storage, key: string) => {
+      const existing = storage.getItem(key);
+      if (existing) return existing;
+      const id = crypto.randomUUID();
+      storage.setItem(key, id);
+      return id;
+    };
+
+    const visitorId = getId(localStorage, "lscsd-visitor-id");
+    const sessionId = getId(sessionStorage, "lscsd-session-id");
+
+    const heartbeat = async () => {
+      if (document.visibilityState === "hidden") return;
+      try {
+        const result = await fetch("/api/viewers", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ visitorId, sessionId }),
+        });
+        if (!result.ok) return;
+        const data = await result.json();
+        setViewerStats({ online: data.online, total: data.total });
+      } catch {
+        // The local preview has no Vercel function; keep the neutral placeholder.
+      }
+    };
+
+    heartbeat();
+    const interval = window.setInterval(heartbeat, 20_000);
+    document.addEventListener("visibilitychange", heartbeat);
+    return () => {
+      window.clearInterval(interval);
+      document.removeEventListener("visibilitychange", heartbeat);
+    };
   }, []);
 
   useEffect(() => {
@@ -131,6 +169,10 @@ function App() {
           {navItems.map(([label, id]) => <a className={activeSection === id ? "active" : ""} href={`#${id}`} onClick={closeMenu} key={id}>{label}</a>)}
         </nav>
         <div className="case-chip"><span /> Akte RR-0804</div>
+        <div className="viewer-stats" aria-label="Besucherstatistik">
+          <span className="online-stat"><i /> Online <strong>{viewerStats.online ?? "–"}</strong></span>
+          <span>Total Viewer <strong>{viewerStats.total ?? "–"}</strong></span>
+        </div>
       </header>
 
       <main>
