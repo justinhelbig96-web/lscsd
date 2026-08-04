@@ -10,7 +10,6 @@ import {
   Scale,
   ShieldCheck,
   Target,
-  Users,
   X,
 } from "lucide-react";
 
@@ -203,8 +202,8 @@ function App() {
               <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 01</span><h3>Alice Berlin</h3><p>Derzeitige SD-Leitung</p><div className="experience-chip">Erfahrung · Department-Leitung</div></div>
             </article>
             <article className="leader-profile co-profile" data-reveal>
-              <div className="photo-placeholder"><Users size={42} strokeWidth={1.1} /><span>Bild ergänzen</span></div>
-              <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 02</span><h3>Name folgt</h3><p>Profil und Aufgabenbereich werden nach finaler Abstimmung ergänzt.</p></div>
+              <div className="profile-photo kevin-photo"><img src="/team/kevin-hoch.png" alt="Kevin Hoch" /><span>Co-Leitung 02</span></div>
+              <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 02</span><h3>Kevin Hoch</h3><p>Erfahrungsprofil wird ergänzt.</p></div>
             </article>
           </div>
           <aside className="leadership-note" data-reveal>

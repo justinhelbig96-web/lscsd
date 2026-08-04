@@ -16,4 +16,5 @@ body{font-size:16px}.topbar{height:84px;border-bottom:2px solid rgba(199,163,90,
 @media(max-width:560px){.leadership-note{grid-template-columns:1fr}.note-intro{padding:32px 26px}.note-intro h3{font-size:34px}.learning-points{grid-template-columns:1fr}.learning-points>div{padding:24px 26px;border-left:0;border-top:1px solid rgba(255,255,255,.08)}.learning-points span{margin:8px 0}.leadership-note>blockquote{padding:28px 26px;font-size:19px}.leadership-note p{font-size:14px}}
 .note-intro blockquote{margin:36px 0 0;padding:24px 0 0;border-top:1px solid rgba(199,163,90,.35);font-size:21px;line-height:1.42;color:#d9c68f}.leadership-note>.note-intro{height:100%}.leadership-note>.learning-points{height:100%}
 @media(max-width:560px){.note-intro blockquote{font-size:18px;margin-top:26px;padding-top:20px}}
+.kevin-photo img{object-position:center 24%}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}[data-reveal]{opacity:1;transform:none}}
