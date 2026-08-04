@@ -4,12 +4,16 @@ import {
   BadgeCheck,
   BookOpenCheck,
   ChevronRight,
+  ClipboardCheck,
   Handshake,
   HeartPulse,
   Menu,
+  RadioTower,
   Scale,
   ShieldCheck,
   Target,
+  UserRoundCheck,
+  Users,
   X,
 } from "lucide-react";
 
@@ -203,7 +207,11 @@ function App() {
             </article>
             <article className="leader-profile co-profile" data-reveal>
               <div className="profile-photo kevin-photo"><img src="/team/kevin-hoch.png" alt="Kevin Hoch" /><span>Co-Leitung 02</span></div>
-              <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 02</span><h3>Kevin Hoch</h3><p>Erfahrungsprofil wird ergänzt.</p></div>
+              <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 02</span><h3>Kevin Hoch</h3><p>Erfahrung in der PU- und HR-Leitung.</p><div className="experience-chip">PU Leitung · HR Leitung</div></div>
+            </article>
+            <article className="leader-profile co-profile" data-reveal>
+              <div className="photo-placeholder"><Users size={42} strokeWidth={1.1} /><span>Bild folgt</span></div>
+              <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 03</span><h3>Benjamin Page</h3><p>Langjähriges Department-Mitglied mit Erfahrung auf der Leitungsebene und umfassender Kenntnis der internen Abläufe.</p><div className="experience-chip">Leitungsebene · Department-Erfahrung</div></div>
             </article>
           </div>
           <aside className="leadership-note" data-reveal>
@@ -247,6 +255,14 @@ function App() {
           <div className="training-banner" data-reveal>
             <div className="training-title"><BookOpenCheck size={34} strokeWidth={1.35} /><div><span>Priorität</span><h3>SCHULUNGEN & AUSBILDUNGEN</h3></div></div>
             <div className="combat-medic"><HeartPulse size={28} /><div><strong>Combat-Medic-Schulung</strong><p>Die Vision von Alice Berlin soll fortgeführt werden: Einsatzkräfte werden gezielt in erweiterter Erster Hilfe geschult, damit sie in Notfällen bis zum Eintreffen des Rettungsdienstes sicher unterstützen können.</p></div></div>
+          </div>
+          <div className="ideas-block" data-reveal>
+            <div className="ideas-heading"><span>Ideen für die erste Amtszeit</span><h3>Konkrete Formate.<br />Spürbarer Mehrwert.</h3></div>
+            <div className="ideas-list">
+              <article><UserRoundCheck size={25} /><div><strong>Mentorenprogramm</strong><p>Erfahrene Deputys begleiten neue Mitglieder von der Academy bis in den sicheren Streifendienst.</p></div></article>
+              <article><RadioTower size={25} /><div><strong>Department Pulse</strong><p>Regelmäßige gemeinsame Patrols, Eventfahrten und interne Abende schaffen sichtbare Aktivität.</p></div></article>
+              <article><ClipboardCheck size={25} /><div><strong>After Action Briefing</strong><p>Kurze Nachbesprechungen nach großen Einsätzen machen Erfahrungen direkt für alle nutzbar.</p></div></article>
+            </div>
           </div>
         </section>
 
