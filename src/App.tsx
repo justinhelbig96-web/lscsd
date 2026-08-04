@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import {
   ArrowDown,
   BadgeCheck,
+  BookOpenCheck,
   ChevronRight,
   Handshake,
+  HeartPulse,
   Menu,
   Scale,
   ShieldCheck,
@@ -18,6 +20,7 @@ const navItems = [
   ["Zur Person", "person"],
   ["Leitung", "leitung"],
   ["Motivation", "motivation"],
+  ["Konzept", "konzept"],
   ["Vision", "vision"],
   ["Schlusswort", "schlusswort"],
 ];
@@ -41,6 +44,31 @@ const motivation = [
     title: "Aktivität",
     text: "Das LSCSD soll im Stadtgeschehen wieder sichtbarer werden, gemeinsam Events anfahren und durch interne Veranstaltungen neuen Zusammenhalt entwickeln.",
   },
+];
+
+const departments = [
+  ["PU", "Patrol Unit"],
+  ["DU", "Detective Unit"],
+  ["SED", "Special Enforcement Division"],
+  ["IAD", "Internal Affairs Division"],
+  ["HR", "Human Resources"],
+  ["PRD", "Public Relations Division"],
+];
+
+const ranks = [
+  [25, "Sheriff", "Leader"], [24, "Undersheriff", "Co-Leader"],
+  [23, "HR-Kurator", "Personal & Organisation"], [22, "Department-Kurator", "Abteilungen & Konzepte"],
+  [21, "Assistant Sheriff", "Executive Command"], [20, "Chief Deputy", "Department Command"],
+  [19, "Division Chief", "Division Command"], [18, "Commander", "Area Command"],
+  [17, "Captain", "Senior Command"], [16, "Lieutenant", "Command Staff"],
+  [15, "Staff Sergeant", "Senior Supervision"], [14, "Sergeant", "Supervision"],
+  [13, "Senior Corporal", "Field Supervision"], [12, "Corporal", "Team Supervision"],
+  [11, "Master Deputy", "Senior Field Staff"], [10, "Senior Deputy III", "Advanced Field Staff"],
+  [9, "Senior Deputy II", "Experienced Field Staff"], [8, "Senior Deputy I", "Field Staff"],
+  [7, "Deputy Sheriff III", "Advanced Deputy"], [6, "Deputy Sheriff II", "Deputy"],
+  [5, "Deputy Sheriff I", "Junior Deputy"], [4, "Probationary Deputy", "Probezeit"],
+  [3, "Senior Cadet", "Fortgeschrittene Ausbildung"], [2, "Cadet", "Academy"],
+  [1, "Recruit", "Grundausbildung"],
 ];
 
 function DepartmentSeal({ compact = false }: { compact?: boolean }) {
@@ -194,9 +222,30 @@ function App() {
           </div>
         </section>
 
+        <section className="section concept-section" id="konzept">
+          <div className="section-heading" data-reveal>
+            <div className="section-label"><span>04</span> Department-Konzept</div>
+            <h2>Struktur schafft <span>Orientierung.</span></h2>
+            <p>Sechs Abteilungen und eine transparente Laufbahn vom Recruit bis zur Department-Leitung.</p>
+          </div>
+          <div className="department-grid">
+            {departments.map(([code, name]) => <article className="department-card" data-reveal key={code}><strong>{code}</strong><span>{name}</span></article>)}
+          </div>
+          <div className="rank-panel" data-reveal>
+            <div className="rank-panel-head"><div><span>Rangstruktur</span><h3>25 Dienstgrade</h3></div><small>Rang 25 → Rang 01</small></div>
+            <div className="rank-list">
+              {ranks.map(([level, title, area]) => <div className={Number(level) >= 22 ? "rank-row executive" : "rank-row"} key={level}><span className="rank-level">{String(level).padStart(2, "0")}</span><strong>{title}</strong><small>{area}</small></div>)}
+            </div>
+          </div>
+          <div className="training-banner" data-reveal>
+            <div className="training-title"><BookOpenCheck size={34} strokeWidth={1.35} /><div><span>Priorität</span><h3>SCHULUNGEN & AUSBILDUNGEN</h3></div></div>
+            <div className="combat-medic"><HeartPulse size={28} /><div><strong>Combat-Medic-Schulung</strong><p>Die Vision von Alice Berlin soll fortgeführt werden: Einsatzkräfte werden gezielt in erweiterter Erster Hilfe geschult, damit sie in Notfällen bis zum Eintreffen des Rettungsdienstes sicher unterstützen können.</p></div></div>
+          </div>
+        </section>
+
         <section className="section vision-section" id="vision">
           <div className="vision-medallion" data-reveal><DepartmentSeal /></div>
-          <div className="section-label" data-reveal><span>04</span> Vision</div>
+          <div className="section-label" data-reveal><span>05</span> Vision</div>
           <div className="quote-wrap" data-reveal>
             <span className="quote-mark">“</span>
             <blockquote>Ein starkes Department entsteht durch <em>Verlässlichkeit</em>, <em>Zusammenhalt</em> und professionelles Auftreten.</blockquote>
