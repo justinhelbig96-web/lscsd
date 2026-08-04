@@ -3,11 +3,13 @@ import {
   ArrowDown,
   BadgeCheck,
   BookOpenCheck,
+  CalendarCheck,
   ChevronRight,
   ClipboardCheck,
   Handshake,
   HeartPulse,
   Menu,
+  MessageSquareText,
   RadioTower,
   Scale,
   ShieldCheck,
@@ -263,6 +265,11 @@ function App() {
               <article><RadioTower size={25} /><div><strong>Department Pulse</strong><p>Regelmäßige gemeinsame Patrols, Eventfahrten und interne Abende schaffen sichtbare Aktivität.</p></div></article>
               <article><ClipboardCheck size={25} /><div><strong>After Action Briefing</strong><p>Kurze Nachbesprechungen nach großen Einsätzen machen Erfahrungen direkt für alle nutzbar.</p></div></article>
             </div>
+          </div>
+          <div className="improvement-strip" data-reveal>
+            <div className="improvement-label"><span>Organisatorische Verbesserungen</span><strong>Mehr Austausch.<br />Mehr Klarheit.</strong></div>
+            <article><CalendarCheck size={27} /><div><strong>Wöchentliche Briefings</strong><p>Ein fester Termin für aktuelle Ziele, wichtige Änderungen und die Planung der kommenden Woche.</p></div></article>
+            <article><MessageSquareText size={27} /><div><strong>Regelmäßige Dienstbesprechungen</strong><p>Mehr Raum für Fragen, interne Probleme, Vorschläge und gemeinsame Entscheidungen im Department.</p></div></article>
           </div>
         </section>
 
