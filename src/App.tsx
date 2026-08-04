@@ -208,8 +208,25 @@ function App() {
           <div className="section-label" data-reveal><span>01</span> Zur Person</div>
           <div className="person-grid">
             <article className="id-card" data-reveal>
-              <div className="id-card-top"><span>Applicant Identification</span><BadgeCheck size={19} /></div>
-              <div className="portrait"><span>RR</span><small>Applicant</small></div>
+              <div className="id-card-top">
+                <div className="id-card-agency">
+                  <img src="/logos/lscsd-logo.webp" alt="" aria-hidden="true" />
+                  <span><strong>LSCSD</strong><small>Applicant Identification</small></span>
+                </div>
+                <BadgeCheck size={21} />
+              </div>
+              <div className="identity-panel">
+                <div className="identity-photo">
+                  <img src="/team/rainer-rose.png" alt="Rainer Rose" />
+                  <span>Lead Applicant</span>
+                </div>
+                <div className="identity-primary">
+                  <small>Bewerber</small>
+                  <strong>Rainer<br />Rose</strong>
+                  <span>RR</span>
+                  <div><i /> Verifiziert</div>
+                </div>
+              </div>
               <dl>
                 <div><dt>Name</dt><dd>Rainer Rose</dd></div>
                 <div><dt>ID</dt><dd>113765</dd></div>
@@ -217,8 +234,10 @@ function App() {
                 <div><dt>Ort</dt><dd>Los Santos County</dd></div>
                 <div><dt>Status</dt><dd className="status"><span /> Bewerbung eingereicht</dd></div>
               </dl>
-              <div className="barcode" aria-hidden="true" />
-              <small className="id-number">RR / 0804 / LSC</small>
+              <div className="id-card-footer">
+                <div className="barcode" aria-hidden="true" />
+                <small className="id-number">RR / 0804 / LSC</small>
+              </div>
             </article>
             <div className="person-copy" data-reveal>
               <p className="eyebrow">Persönliche Vorstellung</p>
