@@ -52,23 +52,24 @@ const departments = [
   ["SED", "Special Enforcement Division"],
   ["IAD", "Internal Affairs Division"],
   ["HR", "Human Resources"],
-  ["PRD", "Public Relations Division"],
+  ["PRD", "Park Ranger Division"],
 ];
 
 const ranks = [
-  [25, "Sheriff", "Leader"], [24, "Undersheriff", "Co-Leader"],
-  [23, "HR-Kurator", "Personal & Organisation"], [22, "Department-Kurator", "Abteilungen & Konzepte"],
-  [21, "Assistant Sheriff", "Executive Command"], [20, "Chief Deputy", "Department Command"],
-  [19, "Division Chief", "Division Command"], [18, "Commander", "Area Command"],
-  [17, "Captain", "Senior Command"], [16, "Lieutenant", "Command Staff"],
-  [15, "Staff Sergeant", "Senior Supervision"], [14, "Sergeant", "Supervision"],
-  [13, "Senior Corporal", "Field Supervision"], [12, "Corporal", "Team Supervision"],
-  [11, "Master Deputy", "Senior Field Staff"], [10, "Senior Deputy III", "Advanced Field Staff"],
-  [9, "Senior Deputy II", "Experienced Field Staff"], [8, "Senior Deputy I", "Field Staff"],
-  [7, "Deputy Sheriff III", "Advanced Deputy"], [6, "Deputy Sheriff II", "Deputy"],
-  [5, "Deputy Sheriff I", "Junior Deputy"], [4, "Probationary Deputy", "Probezeit"],
-  [3, "Senior Cadet", "Fortgeschrittene Ausbildung"], [2, "Cadet", "Academy"],
-  [1, "Recruit", "Grundausbildung"],
+  [27, "County Sheriff", "Leitungsebene"], [26, "Undersheriff", "Co-Leitung"],
+  [25, "Executive HR Curator", "Leaderschaft · HR"], [24, "Assistant Sheriff", "Leaderschaft"],
+  [23, "Director of Administration", "Direktion · HR"], [22, "Department Curator", "Abteilungskoordination"],
+  [21, "Area Commander", "Management"], [20, "Deputy Area Commander", "Management"],
+  [19, "Chief Inspector", "Aufsicht · IAD"], [18, "HR Supervisor", "HR"],
+  [17, "Internal Affairs Supervisor", "IAD"], [16, "SED Commander", "Abteilungsleitung · SED"],
+  [15, "SED Team Leader", "SED"], [14, "Senior County Ranger", "PRD"],
+  [13, "Watch Commander", "Schichtleitung · PU"], [12, "Senior Detective", "DU"],
+  [11, "County Ranger", "PRD"], [10, "SED Probationary Officer", "SED"],
+  [9, "HR Associate", "HR"], [8, "IAD Investigator Trainee", "IAD"],
+  [7, "Junior County Ranger", "PRD"], [6, "Public Relations Deputy", "PRD · Media"],
+  [5, "Senior Patrol Deputy", "PU"], [4, "Patrol Deputy", "PU"],
+  [3, "Junior Patrol Deputy", "PU"], [2, "Academy Recruit", "Academy · PU"],
+  [1, "Suspended", "Außer Dienst"],
 ];
 
 function DepartmentSeal({ compact = false }: { compact?: boolean }) {
@@ -136,6 +137,7 @@ function App() {
       <main>
         <section className="hero" id="start">
           <div className="map-grid" aria-hidden="true" />
+          <div className="emergency-lights" aria-hidden="true"><span className="blue-light" /><span className="red-light" /></div>
           <div className="hero-copy" data-reveal>
             <p className="eyebrow"><span /> Los Santos County Sheriff’s Department</p>
             <h1>Bewerbung <em>–</em><br /><span>Rainer Rose</span></h1>
@@ -226,15 +228,15 @@ function App() {
           <div className="section-heading" data-reveal>
             <div className="section-label"><span>04</span> Department-Konzept</div>
             <h2>Struktur schafft <span>Orientierung.</span></h2>
-            <p>Sechs Abteilungen und eine transparente Laufbahn vom Recruit bis zur Department-Leitung.</p>
+            <p>Sechs Abteilungen und eine transparente Laufbahn mit klarer Zuordnung zu Führungsebene, Management und Fachabteilung.</p>
           </div>
           <div className="department-grid">
             {departments.map(([code, name]) => <article className="department-card" data-reveal key={code}><strong>{code}</strong><span>{name}</span></article>)}
           </div>
           <div className="rank-panel" data-reveal>
-            <div className="rank-panel-head"><div><span>Rangstruktur</span><h3>25 Dienstgrade</h3></div><small>Rang 25 → Rang 01</small></div>
+            <div className="rank-panel-head"><div><span>Rangstruktur & Abteilungen</span><h3>27 Dienstgrade</h3></div><small>Rang 27 → Rang 01</small></div>
             <div className="rank-list">
-              {ranks.map(([level, title, area]) => <div className={Number(level) >= 22 ? "rank-row executive" : "rank-row"} key={level}><span className="rank-level">{String(level).padStart(2, "0")}</span><strong>{title}</strong><small>{area}</small></div>)}
+              {ranks.map(([level, title, area]) => <div className={Number(level) === 1 ? "rank-row suspended" : Number(level) >= 22 ? "rank-row executive" : "rank-row"} key={level}><span className="rank-level">{String(level).padStart(2, "0")}</span><strong>{title}</strong><small>{area}</small></div>)}
             </div>
           </div>
           <div className="training-banner" data-reveal>
