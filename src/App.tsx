@@ -198,12 +198,14 @@ function App() {
               <div className="photo-placeholder"><UserRound size={58} strokeWidth={1.15} /><span>Foto ergänzen</span><small>Empfohlen: Hochformat</small></div>
               <div className="profile-info"><span className="role-tag">Vorgeschlagener Leader</span><h3>Rainer Rose</h3><p>Erste angestrebte Amtszeit als Sheriff</p><dl><div><dt>Erfahrung</dt><dd>HR-Kurator</dd></div><div><dt>Führung</dt><dd>Mehrfache HR-Leitung</dd></div><div><dt>Schwerpunkt</dt><dd>Mitarbeiterpflege & Aktivität</dd></div></dl></div>
             </article>
-            {[1, 2].map((slot) => (
-              <article className="leader-profile co-profile" data-reveal key={slot}>
-                <div className="photo-placeholder"><Users size={42} strokeWidth={1.1} /><span>Bild ergänzen</span></div>
-                <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung {slot}</span><h3>Name folgt</h3><p>Profil und Aufgabenbereich werden nach finaler Abstimmung ergänzt.</p></div>
-              </article>
-            ))}
+            <article className="leader-profile co-profile" data-reveal>
+              <div className="profile-photo"><img src="/team/alice-berlin.png" alt="Alice Berlin" /><span>Co-Leitung 01</span></div>
+              <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 01</span><h3>Alice Berlin</h3><p>Derzeitige SD-Leitung</p><div className="experience-chip">Erfahrung · Department-Leitung</div></div>
+            </article>
+            <article className="leader-profile co-profile" data-reveal>
+              <div className="photo-placeholder"><Users size={42} strokeWidth={1.1} /><span>Bild ergänzen</span></div>
+              <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 02</span><h3>Name folgt</h3><p>Profil und Aufgabenbereich werden nach finaler Abstimmung ergänzt.</p></div>
+            </article>
           </div>
         </section>
 
