@@ -18,12 +18,15 @@ export default async function handler(request: VercelRequest, response: VercelRe
     return response.status(400).json({ error: "Invalid visitor data" });
   }
 
-  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+  const redisUrl = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL;
+  const redisToken = process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN;
+
+  if (!redisUrl || !redisToken) {
     return response.status(503).json({ error: "Viewer counter is not configured" });
   }
 
   try {
-    const redis = Redis.fromEnv();
+    const redis = new Redis({ url: redisUrl, token: redisToken });
     const now = Date.now();
     await redis.zadd(ONLINE_KEY, { score: now, member: sessionId });
     await redis.zremrangebyscore(ONLINE_KEY, 0, now - ONLINE_WINDOW_MS);
