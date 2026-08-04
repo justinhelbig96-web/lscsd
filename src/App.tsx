@@ -209,8 +209,13 @@ function App() {
             </article>
           </div>
           <aside className="leadership-note" data-reveal>
-            <BadgeCheck size={34} strokeWidth={1.35} />
-            <div><span>Offenheit & Lernbereitschaft</span><h3>Führung lernt man, indem man Verantwortung übernimmt.</h3><p>Ich möchte offen damit umgehen, dass ich bisher noch keine Erfahrung in einer Leader-Position sammeln konnte. Führung lässt sich nicht allein theoretisch lernen – man muss die Aufgabe selbst übernehmen, um Abläufe, Entscheidungen und deren Auswirkungen wirklich zu verstehen. Dabei können Fehler passieren, denn Fehler zu machen ist menschlich. Entscheidend ist für mich, offen damit umzugehen, daraus zu lernen und Rat von Menschen anzunehmen, die ihre Erfahrung weitergeben und mir neue Dinge zeigen. Meine erste Amtszeit sehe ich deshalb nicht als Anspruch, bereits alles zu können, sondern als Chance, zuzuhören, mich weiterzuentwickeln und jeden Tag verantwortungsvoll dazuzulernen.</p></div>
+            <div className="note-intro"><span>Offenheit & Lernbereitschaft</span><h3>Noch keine Leader-Erfahrung.<br /><em>Aber bereit, sie aufzubauen.</em></h3><p>Führung lässt sich nicht nur theoretisch lernen. Man muss Verantwortung selbst übernehmen, um Abläufe und Entscheidungen wirklich zu verstehen.</p></div>
+            <div className="learning-points">
+              <div><strong>01</strong><span>Praxis</span><p>Eine Aufgabe versteht man, wenn man sie ausübt – aufmerksam und mit Verantwortung.</p></div>
+              <div><strong>02</strong><span>Fehlerkultur</span><p>Fehler sind menschlich. Wichtig ist, sie anzunehmen und erkennbar daraus zu lernen.</p></div>
+              <div><strong>03</strong><span>Miteinander</span><p>Ich höre Menschen zu, die Erfahrung teilen, erklären und neue Wege zeigen.</p></div>
+            </div>
+            <blockquote>Meine erste Amtszeit ist nicht der Anspruch, alles zu können. Sie ist das Versprechen, jeden Tag dazuzulernen.</blockquote>
           </aside>
         </section>
 
