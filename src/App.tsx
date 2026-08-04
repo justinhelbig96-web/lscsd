@@ -10,7 +10,6 @@ import {
   Scale,
   ShieldCheck,
   Target,
-  UserRound,
   Users,
   X,
 } from "lucide-react";
@@ -171,6 +170,8 @@ function App() {
               <div className="portrait"><span>RR</span><small>Applicant</small></div>
               <dl>
                 <div><dt>Name</dt><dd>Rainer Rose</dd></div>
+                <div><dt>ID</dt><dd>113765</dd></div>
+                <div><dt>OOC-Alter</dt><dd>30 Jahre</dd></div>
                 <div><dt>Ort</dt><dd>Los Santos County</dd></div>
                 <div><dt>Status</dt><dd className="status"><span /> Bewerbung eingereicht</dd></div>
               </dl>
@@ -195,8 +196,8 @@ function App() {
           </div>
           <div className="leadership-grid">
             <article className="leader-profile lead-profile" data-reveal>
-              <div className="photo-placeholder"><UserRound size={58} strokeWidth={1.15} /><span>Foto ergänzen</span><small>Empfohlen: Hochformat</small></div>
-              <div className="profile-info"><span className="role-tag">Vorgeschlagener Leader</span><h3>Rainer Rose</h3><p>Erste angestrebte Amtszeit als Sheriff</p><dl><div><dt>Erfahrung</dt><dd>HR-Kurator</dd></div><div><dt>Führung</dt><dd>Mehrfache HR-Leitung</dd></div><div><dt>Schwerpunkt</dt><dd>Mitarbeiterpflege & Aktivität</dd></div></dl></div>
+              <div className="profile-photo rainer-photo"><img src="/team/rainer-rose.png" alt="Rainer Rose" /><span>Vorgeschlagener Leader</span></div>
+              <div className="profile-info"><span className="role-tag">Vorgeschlagener Leader</span><h3>Rainer Rose</h3><p>Erste angestrebte Amtszeit als Sheriff</p><dl><div><dt>ID</dt><dd>113765</dd></div><div><dt>OOC-Alter</dt><dd>30 Jahre</dd></div><div><dt>Erfahrung</dt><dd>HR-Kurator</dd></div><div><dt>Führung</dt><dd>Mehrfache HR-Leitung</dd></div><div><dt>Schwerpunkt</dt><dd>Mitarbeiterpflege & Aktivität</dd></div></dl></div>
             </article>
             <article className="leader-profile co-profile" data-reveal>
               <div className="profile-photo"><img src="/team/alice-berlin.png" alt="Alice Berlin" /><span>Co-Leitung 01</span></div>
