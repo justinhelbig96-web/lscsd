@@ -210,7 +210,7 @@ function App() {
             </article>
             <article className="leader-profile co-profile" data-reveal>
               <div className="photo-placeholder"><Users size={42} strokeWidth={1.1} /><span>Bild folgt</span></div>
-              <div className="profile-info"><span className="role-tag">Vorgeschlagene Co-Leitung 03</span><h3>Benjamin Page</h3><p>Langjähriges Department-Mitglied mit Erfahrung auf der Leitungsebene und umfassender Kenntnis der internen Abläufe.</p><div className="experience-chip">Leitungsebene · Department-Erfahrung</div></div>
+              <div className="profile-info"><span className="role-tag">Co-Leitung 03</span><h3>Benjamin Page</h3><p>Langjähriges Department-Mitglied mit Erfahrung auf der Leitungsebene und umfassender Kenntnis der internen Abläufe.</p><div className="experience-chip">Leitungsebene · Department-Erfahrung</div></div>
             </article>
           </div>
           <aside className="leadership-note" data-reveal>
