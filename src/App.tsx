@@ -244,7 +244,15 @@ function App() {
               <h2>Bereit, mich <span>einzubringen.</span></h2>
               <p className="lead">Mein Name ist Rainer Rose. Ich möchte mich beim Los Santos County Sheriff’s Department bewerben und mich dort zuverlässig, professionell und aktiv einbringen.</p>
               <p>Durch meine mehrfachen Tätigkeiten als HR-Kurator und in der HR-Leitung bringe ich Erfahrung in Mitarbeiterbetreuung, Kommunikation und internen Abläufen mit. Nun möchte ich meine erste Amtszeit als Leader antreten, mehr über den Ablauf als Sheriff lernen und Verantwortung für das gesamte Department übernehmen.</p>
-              <p className="hr-reference"><strong>Konkreter HR-Beitrag</strong><span>Das derzeit genutzte HR-Dokument wurde von mir während meiner ersten Amtszeit in der HR-Leitung unter Mohammed Khalifa erstellt.</span></p>
+              <aside className="hr-reference" aria-label="Konkreter HR-Beitrag">
+                <div className="hr-reference-icon"><ClipboardCheck size={24} /></div>
+                <div className="hr-reference-copy">
+                  <small>Nachweisbarer Beitrag</small>
+                  <strong>HR-Dokumentation</strong>
+                  <p>Das derzeit genutzte HR-Dokument habe ich während meiner ersten Amtszeit in der HR-Leitung erstellt.</p>
+                  <div className="hr-reference-facts"><span>Unter Mohammed Khalifa</span><span>Weiterhin im Einsatz</span></div>
+                </div>
+              </aside>
               <div className="values-row"><span>Verlässlich</span><span>Professionell</span><span>Aktiv</span></div>
             </div>
           </div>
