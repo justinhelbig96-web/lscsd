@@ -207,12 +207,8 @@ function App() {
             </article>
           </div>
           <aside className="leadership-note" data-reveal>
-            <div className="note-intro"><span>Offenheit & Lernbereitschaft</span><h3>Noch keine Leader-Erfahrung.<br /><em>Aber bereit, sie aufzubauen.</em></h3><p>Führung lässt sich nicht nur theoretisch lernen. Man muss Verantwortung selbst übernehmen, um Abläufe und Entscheidungen wirklich zu verstehen.</p><blockquote>Meine erste Amtszeit ist nicht der Anspruch, alles zu können. Sie ist das Versprechen, jeden Tag dazuzulernen.</blockquote></div>
-            <div className="learning-points">
-              <div><strong>01</strong><span>Praxis</span><p>Eine Aufgabe versteht man, wenn man sie ausübt – aufmerksam und mit Verantwortung.</p></div>
-              <div><strong>02</strong><span>Fehlerkultur</span><p>Fehler sind menschlich. Wichtig ist, sie anzunehmen und erkennbar daraus zu lernen.</p></div>
-              <div><strong>03</strong><span>Miteinander</span><p>Ich höre Menschen zu, die Erfahrung teilen, erklären und neue Wege zeigen.</p></div>
-            </div>
+            <div className="note-symbol"><BadgeCheck size={38} strokeWidth={1.35} /><span>Erste Amtszeit</span></div>
+            <div className="note-copy"><span>Offenheit & Lernbereitschaft</span><h3>Bereit, Führung zu lernen.</h3><p>Ich möchte offen sagen, dass ich bisher noch keine Leader-Position ausgeübt habe. Meiner Ansicht nach lernt man Führung nicht allein in der Theorie – man muss Verantwortung selbst übernehmen, um den Job und seine Abläufe wirklich zu verstehen.</p><p>Fehler gehören dazu. Entscheidend ist, daraus zu lernen, Feedback anzunehmen und sich von erfahrenen Menschen etwas zeigen zu lassen. Mit genau dieser Haltung möchte ich meine erste Amtszeit antreten.</p></div>
           </aside>
         </section>
 
