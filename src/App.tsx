@@ -187,6 +187,7 @@ function App() {
               <h2>Bereit, mich <span>einzubringen.</span></h2>
               <p className="lead">Mein Name ist Rainer Rose. Ich möchte mich beim Los Santos County Sheriff’s Department bewerben und mich dort zuverlässig, professionell und aktiv einbringen.</p>
               <p>Durch meine mehrfachen Tätigkeiten als HR-Kurator und in der HR-Leitung bringe ich Erfahrung in Mitarbeiterbetreuung, Kommunikation und internen Abläufen mit. Nun möchte ich meine erste Amtszeit als Leader antreten, mehr über den Ablauf als Sheriff lernen und Verantwortung für das gesamte Department übernehmen.</p>
+              <p className="hr-reference"><strong>Konkreter HR-Beitrag</strong><span>Das derzeit genutzte HR-Dokument wurde von mir während meiner ersten Amtszeit in der HR-Leitung unter Mohammed Khalifa erstellt.</span></p>
               <div className="values-row"><span>Verlässlich</span><span>Professionell</span><span>Aktiv</span></div>
             </div>
           </div>
@@ -201,7 +202,7 @@ function App() {
           <div className="leadership-grid">
             <article className="leader-profile lead-profile" data-reveal>
               <div className="profile-photo rainer-photo"><img src="/team/rainer-rose.png" alt="Rainer Rose" /><span>Vorgeschlagener Leader</span></div>
-              <div className="profile-info"><span className="role-tag">Vorgeschlagener Leader</span><h3>Rainer Rose</h3><p>Erste angestrebte Amtszeit als Sheriff</p><dl><div><dt>ID</dt><dd>113765</dd></div><div><dt>OOC-Alter</dt><dd>30 Jahre</dd></div><div><dt>Erfahrung</dt><dd>HR-Kurator</dd></div><div><dt>Führung</dt><dd>Mehrfache HR-Leitung</dd></div><div><dt>Schwerpunkt</dt><dd>Mitarbeiterpflege & Aktivität</dd></div></dl></div>
+              <div className="profile-info"><span className="role-tag">Vorgeschlagener Leader</span><h3>Rainer Rose</h3><p>Erste angestrebte Amtszeit als Sheriff</p><dl><div><dt>ID</dt><dd>113765</dd></div><div><dt>OOC-Alter</dt><dd>30 Jahre</dd></div><div><dt>Erfahrung</dt><dd>HR-Kurator</dd></div><div><dt>Führung</dt><dd>Mehrfache HR-Leitung</dd></div><div><dt>Erste HR-Leitung</dt><dd>Unter Mohammed Khalifa</dd></div><div><dt>HR-Beitrag</dt><dd>Aktuelles HR-Dokument erstellt</dd></div><div><dt>Schwerpunkt</dt><dd>Mitarbeiterpflege & Aktivität</dd></div></dl></div>
             </article>
             <article className="leader-profile co-profile" data-reveal>
               <div className="profile-photo"><img src="/team/alice-berlin.png" alt="Alice Berlin" /><span>Co-Leitung 01</span></div>
@@ -280,7 +281,7 @@ function App() {
             <span className="quote-mark">“</span>
             <blockquote>Ein starkes Department entsteht durch <em>Verlässlichkeit</em>, <em>Zusammenhalt</em> und professionelles Auftreten.</blockquote>
           </div>
-          <div className="vision-goals" data-reveal><div><strong>Präsenz</strong><p>Das LSCSD soll wieder aktiver am Stadtgeschehen teilnehmen und gemeinsam Events anfahren.</p></div><div><strong>Department-Leben</strong><p>Interne Veranstaltungen sollen Zusammenhalt, Austausch und Motivation der Mitarbeiter stärken.</p></div><div><strong>Mitarbeiterpflege</strong><p>Ansprechbarkeit, konstruktives Feedback und eine verlässliche Betreuung bilden die Grundlage der Führung.</p></div></div>
+          <div className="vision-goals" data-reveal><div><strong>Präsenz</strong><p>Das LSCSD soll wieder aktiver am Stadtgeschehen teilnehmen und gemeinsam Events anfahren.</p></div><div><strong>Department-Leben</strong><p>Interne Veranstaltungen sollen Zusammenhalt, Austausch und Motivation der Mitarbeiter stärken.</p></div><div><strong>Mitarbeiterpflege</strong><p>Ansprechbarkeit, konstruktives Feedback und eine verlässliche Betreuung bilden die Grundlage der Führung.</p></div><div><strong>Dienstblatt & Aktivitätscheck</strong><p>Eine wöchentliche Übersicht schafft transparente Aktivität, faire Kontrolle und zeigt frühzeitig, wo Unterstützung gebraucht wird.</p></div></div>
           <div className="future-note" data-reveal><span>Ausblick</span><p>Units, Zuständigkeiten, Rangstruktur und weiterführende Konzepte werden später gemeinsam und sorgfältig ergänzt.</p></div>
         </section>
 
