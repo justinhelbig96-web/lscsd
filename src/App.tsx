@@ -55,19 +55,18 @@ const departments = [
 ];
 
 const ranks = [
-  [27, "County Sheriff", "Leitungsebene"], [26, "Undersheriff", "Co-Leitung"],
-  [25, "Executive HR Curator", "Leaderschaft · HR"], [24, "Assistant Sheriff", "Leaderschaft"],
-  [23, "Director of Administration", "Direktion · HR"], [22, "Department Curator", "Abteilungskoordination"],
-  [21, "Area Commander", "Management"], [20, "Deputy Area Commander", "Management"],
-  [19, "Chief Inspector", "Aufsicht · IAD"], [18, "HR Supervisor", "HR"],
-  [17, "Internal Affairs Supervisor", "IAD"], [16, "SED Commander", "Abteilungsleitung · SED"],
-  [15, "SED Team Leader", "SED"], [14, "Senior County Ranger", "PRD"],
-  [13, "Watch Commander", "Schichtleitung · PU"], [12, "Senior Detective", "DU"],
-  [11, "County Ranger", "PRD"], [10, "SED Probationary Officer", "SED"],
-  [9, "HR Associate", "HR"], [8, "IAD Investigator Trainee", "IAD"],
-  [7, "Junior County Ranger", "PRD"], [6, "Public Relations Deputy", "PRD · Media"],
-  [5, "Senior Patrol Deputy", "PU"], [4, "Patrol Deputy", "PU"],
-  [3, "Junior Patrol Deputy", "PU"], [2, "Academy Recruit", "Academy · PU"],
+  [25, "County Sheriff", "Leitung"], [24, "Undersheriff", "Co-Leitung"],
+  [23, "HR Curator", "HR"], [22, "Department Curator", "Alle Abteilungen"],
+  [21, "Assistant Sheriff", "Leitung"], [20, "Area Commander", "Management"],
+  [19, "Deputy Commander", "Management"], [18, "Captain", "PU"],
+  [17, "SED Captain", "SED"], [16, "SED Lieutenant", "SED"],
+  [15, "IAD Supervisor", "IAD"], [14, "HR Supervisor", "HR"],
+  [13, "Senior Detective", "DU"], [12, "Detective", "DU"],
+  [11, "Senior Ranger", "PRD"], [10, "Ranger", "PRD"],
+  [9, "SED Trainee", "SED"], [8, "IAD Trainee", "IAD"],
+  [7, "HR Trainee", "HR"], [6, "Media Deputy", "PRD · Media"],
+  [5, "Senior Deputy", "PU"], [4, "Deputy", "PU"],
+  [3, "Junior Deputy", "PU"], [2, "Trainee", "Academy · PU"],
   [1, "Suspended", "Außer Dienst"],
 ];
 
@@ -209,13 +208,12 @@ function App() {
             </article>
           </div>
           <aside className="leadership-note" data-reveal>
-            <div className="note-intro"><span>Offenheit & Lernbereitschaft</span><h3>Noch keine Leader-Erfahrung.<br /><em>Aber bereit, sie aufzubauen.</em></h3><p>Führung lässt sich nicht nur theoretisch lernen. Man muss Verantwortung selbst übernehmen, um Abläufe und Entscheidungen wirklich zu verstehen.</p></div>
+            <div className="note-intro"><span>Offenheit & Lernbereitschaft</span><h3>Noch keine Leader-Erfahrung.<br /><em>Aber bereit, sie aufzubauen.</em></h3><p>Führung lässt sich nicht nur theoretisch lernen. Man muss Verantwortung selbst übernehmen, um Abläufe und Entscheidungen wirklich zu verstehen.</p><blockquote>Meine erste Amtszeit ist nicht der Anspruch, alles zu können. Sie ist das Versprechen, jeden Tag dazuzulernen.</blockquote></div>
             <div className="learning-points">
               <div><strong>01</strong><span>Praxis</span><p>Eine Aufgabe versteht man, wenn man sie ausübt – aufmerksam und mit Verantwortung.</p></div>
               <div><strong>02</strong><span>Fehlerkultur</span><p>Fehler sind menschlich. Wichtig ist, sie anzunehmen und erkennbar daraus zu lernen.</p></div>
               <div><strong>03</strong><span>Miteinander</span><p>Ich höre Menschen zu, die Erfahrung teilen, erklären und neue Wege zeigen.</p></div>
             </div>
-            <blockquote>Meine erste Amtszeit ist nicht der Anspruch, alles zu können. Sie ist das Versprechen, jeden Tag dazuzulernen.</blockquote>
           </aside>
         </section>
 
@@ -246,7 +244,7 @@ function App() {
             {departments.map(([code, name]) => <article className="department-card" data-reveal key={code}><strong>{code}</strong><span>{name}</span></article>)}
           </div>
           <div className="rank-panel" data-reveal>
-            <div className="rank-panel-head"><div><span>Rangstruktur & Abteilungen</span><h3>27 Dienstgrade</h3></div><small>Rang 27 → Rang 01</small></div>
+            <div className="rank-panel-head"><div><span>Rangstruktur & Abteilungen</span><h3>25 Dienstgrade</h3></div><small>Rang 25 → Rang 01</small></div>
             <div className="rank-list">
               {ranks.map(([level, title, area]) => <div className={Number(level) === 1 ? "rank-row suspended" : Number(level) >= 22 ? "rank-row executive" : "rank-row"} key={level}><span className="rank-level">{String(level).padStart(2, "0")}</span><strong>{title}</strong><small>{area}</small></div>)}
             </div>
