@@ -62,10 +62,10 @@ const departments = [
 const ranks = [
   [25, "County Sheriff", "Leitung"], [24, "Undersheriff", "Co-Leitung"],
   [23, "HR Curator", "HR"], [22, "Department Curator", "Alle Abteilungen"],
-  [21, "Assistant Sheriff", "Leitung"], [20, "Area Commander", "Management"],
-  [19, "Deputy Commander", "Management"], [18, "Captain", "PU"],
+  [21, "HR Supervisor", "HR-Leitung"], [20, "Area Commander", "Abteilungsleitung"],
+  [19, "Deputy Commander", "Co-Abteilungsleitung"], [18, "Captain", "PU"],
   [17, "SED Captain", "SED"], [16, "SED Lieutenant", "SED"],
-  [15, "IAD Supervisor", "IAD"], [14, "HR Supervisor", "HR"],
+  [15, "IAD Supervisor", "IAD"], [14, "Senior HR Officer", "HR"],
   [13, "Senior Detective", "DU"], [12, "Detective", "DU"],
   [11, "Senior Ranger", "PRD"], [10, "Ranger", "PRD"],
   [9, "SED Trainee", "SED"], [8, "IAD Trainee", "IAD"],
